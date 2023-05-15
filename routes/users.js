@@ -63,15 +63,15 @@ router.post('/changePassword',
 
 body('passwordUpdate').notEmpty().withMessage('password required').isLength({min:6,max:25}).
     custom((password,{req})=>{
-        // if (password !== req.body.passwordConfaim){
-        //     console.log(req.body.passwordConfaim)
-        //     console.log(password)
+        if (password !== req.body.passwordConfaim){
+            console.log(req.body.passwordConfaim)
+            console.log(password)
 
-        //     throw new Error("Password Conformation incorrect")
-        // }
+            throw new Error("Password Conformation incorrect")
+        }
         return true
     }),
-    // body('passwordConfaim').notEmpty().withMessage('password required').isLength({min:6,max:25}),validator,register.updatePassword)
+    body('passwordConfaim').notEmpty().withMessage('password required').isLength({min:6,max:25}),validator,register.updatePassword)
 
 router.post("/login",
     body('password').notEmpty().withMessage('password required').isLength({min:6,max:25}).withMessage("password must 3-25"),
