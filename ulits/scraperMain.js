@@ -29,7 +29,7 @@ async function scrapeWebPageMain(url) {
             arr['مجتمع'][i].link=link
         }else {
             arr['جريمة'][count].link=link
-            count++
+
 
         }
 
@@ -55,6 +55,9 @@ async function scrapeWebPageMain(url) {
 
 
 }
+
+
+
 async function scrapeWebPageDeatils(url) {
     const response = await axios.get(url);
     const html = response.data;
@@ -75,3 +78,5 @@ module.exports= {
     scrapeWebPageMain,
     scrapeWebPageDeatils
 }
+
+

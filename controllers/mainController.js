@@ -9,7 +9,8 @@ const getDataMain=(req,res)=>{
         .catch(error => console.error(error));
 }
 const getDatadetails=(req,res)=>{
-    const url = `https://www.alwatanvoice.com/arabic/${req.body.url}`;
+   console.log(req.query.url)
+    const url = `https://www.alwatanvoice.com/arabic/${req.query.url}`;
 
     scrapeWebPageDeatils(url)
         .then(data => {

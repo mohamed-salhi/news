@@ -2,9 +2,6 @@ const mongoose=require('mongoose');
 const bcrypt = require('bcrypt');
 
 const usertSchema=mongoose.Schema({
-    imagepath:{
-        type:String
-    },
     name:{
         required:[ true,"name required"],
         type:String
@@ -19,6 +16,11 @@ const usertSchema=mongoose.Schema({
         unique:true,
         type:String,
     },
+    favorite:{
+        required:[ true,"favorite required"],
+        type:String,
+    },
+
     password:{
         required:[ true,"password required"],
         type:String,

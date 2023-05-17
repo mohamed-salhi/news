@@ -29,6 +29,8 @@ mongoose.connect('mongodb://localhost/news').then((con)=>{
 }).catch((err)=>{
   console.log(err)
 })
+
+
 app.all("*",(req,res,next)=>{
   // var error=new Error(`the route this ${req.originalUrl} not found`);
   // next(error.message);

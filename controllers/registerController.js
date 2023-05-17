@@ -23,12 +23,12 @@ const storeUser=(req,res,next)=>{
 
 
     var name=req.body.name;
+    var favorite=req.body.favorite;
     var phone=req.body.phone;
     var email=req.body.email;
-    var imagepath="safdsafsaf";
     var password=req.body.password;
 
-    userModel.create({name,phone,email,imagepath,password}).then((data)=>{
+    userModel.create({name,phone,email,password,favorite}).then((data)=>{
         var token = jwt.sign(
             { user_id: data._id },
             "mohamed2562289mbn",
